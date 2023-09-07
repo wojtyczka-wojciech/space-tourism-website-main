@@ -7,7 +7,7 @@ import {
 	Typography,
 	useTheme,
 } from "@mui/material";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 import { paths } from "../Routes";

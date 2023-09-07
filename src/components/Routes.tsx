@@ -4,6 +4,7 @@ import { Destination } from "../pages/Destination";
 import { Home } from "../pages/Home";
 import { Technology } from "../pages/Technology";
 import { PagesPaths } from "./routes.d";
+import React from "react";
 export const paths: PagesPaths = {
 	home: {
 		name: "Home",

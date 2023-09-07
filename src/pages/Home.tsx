@@ -5,6 +5,7 @@ import { paths } from "../components/Routes";
 import { gsap } from "gsap";
 import { fadeInAndTransform } from "../utils/animations";
 import { useRootBackground } from "../hooks/useRootBackground";
+import React from "react";
 
 interface ISizes {
 	sm: number;
@@ -84,17 +85,26 @@ export const Home = () => {
 			>
 				<Typography
 					variant="h5"
-					textAlign={{xs: "center",desktop: "left"}}
+					textAlign={{ xs: "center", desktop: "left" }}
 					component="p"
 					className="animate"
 				>
 					SO, YOU WANT TO TRAVEL TO
 				</Typography>
-				<Typography variant="h1" textAlign={{xs: "center",desktop: "left"}} className="animate">
+				<Typography
+					variant="h1"
+					textAlign={{ xs: "center", desktop: "left" }}
+					className="animate"
+				>
 					Space
 				</Typography>
-				
-				<Typography maxWidth={444} variant="body" textAlign={{xs: "center",desktop: "left"}} className="animate">
+
+				<Typography
+					maxWidth={444}
+					variant="body"
+					textAlign={{ xs: "center", desktop: "left" }}
+					className="animate"
+				>
 					Let`s face it; if you want to go to space, you might as well genuinely
 					go to outer space and not hover kind of on the edge of it. Well sit
 					back, and relax because we`ll give you a truly out of this world

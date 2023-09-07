@@ -5,6 +5,7 @@ import { crew } from "../constants/crew";
 import { useMove } from "../hooks/useMove";
 import { fadeIn } from "../utils/animations";
 import { useRootBackground } from "../hooks/useRootBackground";
+import React from "react";
 
 const Image = styled("img")`
 	max-width: 100%;
