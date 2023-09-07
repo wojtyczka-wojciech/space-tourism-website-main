@@ -1,8 +1,8 @@
 import { useRoutes } from "react-router-dom";
-import { Crew } from "../pages/Crew";
-import { Destination } from "../pages/Destination";
-import { Home } from "../pages/Home";
-import { Technology } from "../pages/Technology";
+import { Crew } from "../pages/Crew.tsx";
+import { Destination } from "../pages/Destination.tsx";
+import { Home } from "../pages/Home.tsx";
+import { Technology } from "../pages/Technology.tsx";
 import { PagesPaths } from "./routes.d";
 import React from "react";
 export const paths: PagesPaths = {

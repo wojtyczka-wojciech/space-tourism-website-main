@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import soundtrack from "../assets/music/Interstellar Main Theme - Hans Zimmer.mp3";
+import React from "react";
 
 export const Audio = () => {
 	const audioRef = useRef<HTMLAudioElement>(null);
