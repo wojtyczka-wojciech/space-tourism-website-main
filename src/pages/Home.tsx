@@ -1,6 +1,10 @@
 import { Stack, styled, Typography } from "@mui/material";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { paths } from "../components/Routes";
+import { gsap } from "gsap";
+import { fadeInAndTransform } from "../utils/animations";
+import { useRootBackground } from "../hooks/useRootBackground";
 
 interface ISizes {
 	sm: number;
@@ -24,7 +28,7 @@ const ButtonExplore = styled("button")`
 	border-radius: 50%;
 	background-color: white;
 	box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.1);
-	transition: box-shadow 500ms cubic-bezier(0.68,-0.55,0.27,1.55);
+	transition: box-shadow 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	overflow: hidden;
 	&:hover {
 		box-shadow: 0px 0px 0px ${boxShadowSizes["sm"]}px rgba(255, 255, 255, 0.1);
@@ -47,30 +51,50 @@ const ButtonExplore = styled("button")`
 
 export const Home = () => {
 	const navigate = useNavigate();
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	useLayoutEffect(() => {
+		useRootBackground();
+	}, []);
+	useEffect(() => {
+		if (wrapperRef.current === null) return;
+		const target = wrapperRef.current.querySelectorAll<HTMLElement>(".animate");
+
+		const anime = fadeInAndTransform(target);
+		return () => {
+			anime.revert();
+		};
+	}, [wrapperRef]);
+
 	return (
 		<Stack
 			direction={{ mobile: "column", desktop: "row" }}
 			alignItems="center"
-			justifyContent="space-between"
-			mx="auto"
+			justifyContent="space-evenly"
 			p={24}
-			px={{desktop: 200}}
-			mt={{ desktop: 220,tablet: 80 }}>
+			px={{ desktop: 200 }}
+			ref={wrapperRef}
+		>
 			<Stack
-				spacing={{ mobile: 16, tablet: 24 }}
 				sx={({ breakpoints }) => ({
 					mb: 80,
 					[breakpoints.up("desktop")]: {
 						mb: 0,
 					},
-				})}>
-				<Typography variant="h1" order={1} textAlign="center">
-					Space
-				</Typography>
-				<Typography variant="h5" textAlign="center">
+				})}
+			>
+				<Typography
+					variant="h5"
+					textAlign={{xs: "center",desktop: "left"}}
+					component="p"
+					className="animate"
+				>
 					SO, YOU WANT TO TRAVEL TO
 				</Typography>
-				<Typography maxWidth={444} variant="body">
+				<Typography variant="h1" textAlign={{xs: "center",desktop: "left"}} className="animate">
+					Space
+				</Typography>
+				
+				<Typography maxWidth={444} variant="body" textAlign={{xs: "center",desktop: "left"}} className="animate">
 					Let`s face it; if you want to go to space, you might as well genuinely
 					go to outer space and not hover kind of on the edge of it. Well sit
 					back, and relax because we`ll give you a truly out of this world

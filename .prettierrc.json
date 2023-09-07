@@ -6,7 +6,7 @@
 	"endOfLine": "lf",
 	"useTabs": true,
 	"arrowParens": "always",
-	"bracketSameLine": true,
+	"bracketSameLine": false,
 	"trailingComma": "all",
 	"embeddedLanguageFormatting": "auto"
 }
