@@ -13,6 +13,7 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { fadeInAndTransform } from "../utils/animations";
 import { SubpageTitle } from "../components/share/SubpageTitle";
 import { useRootBackground } from "../hooks/useRootBackground";
+import React from "react";
 const slideDuration = 600;
 
 const PlanetImage = styled("img")`

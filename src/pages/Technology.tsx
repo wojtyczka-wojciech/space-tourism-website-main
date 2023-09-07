@@ -5,6 +5,7 @@ import { technology } from "../constants/technology";
 import { useMove } from "../hooks/useMove";
 import { fadeIn } from "../utils/animations";
 import { useRootBackground } from "../hooks/useRootBackground";
+import React from "react";
 type ImageProps = {
 	landscape: string;
 	portrait: string;

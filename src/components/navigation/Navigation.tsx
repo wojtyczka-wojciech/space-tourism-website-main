@@ -3,6 +3,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Logo } from "../share/Logo";
 import { useState } from "react";
 import { CloseButton, Drawer, Line, Nav, NavLinks, Overlay } from "./styles";
+import React from "react";
 
 export const Navigation = () => {
 	const [isNavVisible, setNavVisibility] = useState(false);
@@ -17,12 +18,12 @@ export const Navigation = () => {
 				component="button"
 				p={8}
 				onClick={() => setNavVisibility(true)}
-				display={{tablet: "none"}}
+				display={{ tablet: "none" }}
 			>
 				<AiOutlineMenu />
 			</Box>
 			<Line />
-			<Drawer isVisible={isNavVisible} >
+			<Drawer isVisible={isNavVisible}>
 				<Stack
 					direction="row"
 					justifyContent="flex-end"

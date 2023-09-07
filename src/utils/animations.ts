@@ -29,9 +29,7 @@ export const fadeInAndTransform: FunctionWithTarget = (target) => {
 				target.forEach((item) =>
 					item.style.setProperty(
 						"transform",
-						`translateY(${
-							-translateYValue + translateYValue * progress
-						}px)`,
+						`translateY(${-translateYValue + translateYValue * progress}px)`,
 					),
 				);
 			},
